@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import "tailwindcss";
+
+
+
+
+
+/* Subtle shimmer glow on hover */
+.group:hover .glow-effect {
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -300% 0;
+  }
+
+  100% {
+    background-position: 300% 0;
+  }
+}
+
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
+
+@keyframes float-mid {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
+@keyframes float-fast {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(-40px) translateX(-30px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.animate-float-mid {
+  animation: float-mid 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 8s ease-in-out infinite;
+}
+
+/* Spin Slow Animation for Profile Border */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+/* Logo Reveal Animation */
+.logo-reveal {
+  color: transparent;
+  /* Start transparent (outline only comes from stroke) */
+  -webkit-text-stroke: 1px #FACC15;
+  /* Yellow Outline */
+  background: linear-gradient(90deg, #FACC15 0%, #FACC15 50%, transparent 50.1%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  /* Start Position (Right, transparent side visible) */
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: logo-swipe 2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  /* "Swipe out" effect */
+  animation-delay: 0.5s;
+}
+
+@keyframes logo-swipe {
+  0% {
+    background-position: 100% 0;
+    /* Outline only */
+  }
+
+  100% {
+    background-position: 0 0;
+    /* Filled Yellow */
+    color: #FACC15;
+    /* Ensure solid yellow at end */
+    -webkit-text-stroke: 0px transparent;
+    /* Remove outline */
+  }
+}

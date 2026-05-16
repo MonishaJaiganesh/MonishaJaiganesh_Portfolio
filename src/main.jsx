@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 // Always start at the top on reload — clear hash and disable browser scroll restore
 if ('scrollRestoration' in history) {
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
     <App />
     <Analytics />
+    <SpeedInsights />
     </BrowserRouter>
   </StrictMode>,
 )
